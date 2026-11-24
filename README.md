@@ -5,7 +5,6 @@ Plain HTML/CSS/JS, no build step. Open `index.html` in a browser to view it.
 - `works.js`: all the content (works, updates, awards). Edit this to add, remove or reorder projects.
 - `style.css`: the look.
 - `app.js`: index/images toggle, sorting, category filters, hover previews, open rows, clock, routing.
-- `CNAME`: tells GitHub Pages to serve the site at dfnayz.xyz.
 
 ## Your images and videos
 Double-click `get-media.command` (first time: right-click → Open). It downloads all 112 images
@@ -15,6 +14,9 @@ and videos from the Cargo site into:
 and then switches the site from Cargo to the local `img/` folder. Until you run it, images load from Cargo.
 
 ## Publish on GitHub Pages
+Live at https://dfnayz-xyz.github.io/dfnayz.xyz/ (the domain dfnayz.xyz stays on Cargo for now).
+To move the domain later: add a file named CNAME containing `dfnayz.xyz`, then follow steps 3–4 below.
+
 1. Create a repo (e.g. `dfnayz`) and upload these files.
 2. Settings → Pages → Deploy from branch → `main` / root.
 3. At your domain registrar, point dfnayz.xyz to GitHub Pages: A records 185.199.108.153,
