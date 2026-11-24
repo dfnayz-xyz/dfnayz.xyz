@@ -8,7 +8,7 @@ const USE_LOCAL = false;
 
 const WORKS = [
   { slug:"silicon-stanford", title:"SILICON Stanford", year:2026, ctx:"Stanford University",
-    text:"Visual identity for SILICON at Stanford.", made:"", medium:"screen",
+    text:"Visual identity for SILICON, the Stanford initiative on language inclusion and conservation in old and new media, carried across event posters, social media, interview features, speaker portraits, slide decks, business cards and partner lockups.", made:"Identity system: posters, social, slides, stationery", medium:"screen",
     cover:"w/1000/q/75/i/J3200289598724638754725219406779/Logotype.png", media:[] },
   { slug:"so-short", title:"So Short Film Festival", year:2026, ctx:"Meanwhile Getting Meaner",
     text:"Motion and static flyers for a one-night screening of animated shorts at Nightclub 101, New York. The program leaned on dominant femininity and humiliation humor, hosted by three comedians, with films by animators from both coasts. Promotional content made with Isabella Mendoza, Mia Culpa and Lal Diltemiz. Thanks to Noah Grossman.", made:"After Effects, InDesign; wheatpasted on East Broadway", medium:"screen",
@@ -248,6 +248,7 @@ const LOCAL_MEDIA = {
   "13.jpg"
  ],
  "generational-cursive": ["1.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","9.mp4","11.mp4","12.mp4","13.mp4"],
+ "silicon-stanford": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","06.jpg","07.jpg","08.jpg","09.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg"],
  "hooked": [
   "1.mp4",
   "2.mp4",
@@ -267,6 +268,7 @@ const LOCAL_MEDIA = {
 const THUMBS = { "twenty-love-poems": "img/twenty-love-poems/6.mp4" };
 // Links, as on the Cargo site
 const LINKS = {
+  "silicon-stanford": [["silicon.stanford.edu","https://silicon.stanford.edu/"],["Instagram","https://www.instagram.com/stanfordsilicon"]],
   "so-short": [["Meanwhile Getting Meaner","https://meanwhilegettingmeaner.com/"],["Noah Grossman","https://www.instagram.com/noahgrossmantrial/"]],
   "last-shot": [["Meanwhile Getting Meaner","https://meanwhilegettingmeaner.com/"],["Riso Studio Arts","https://www.risostudioarts.com/"],["Event post 1","https://www.instagram.com/p/Dcy-qDogens/?img_index=1"],["Event post 2","https://www.instagram.com/p/Dc4Jn7rGzV7/?img_index=1"]],
   "generational-cursive-panera-bred": [["Meanwhile Getting Meaner","https://meanwhilegettingmeaner.com/"],["Event","https://www.instagram.com/p/Dbtqd1xkhz_/?img_index=1"],["Consumer Aesthetics Research Institute","https://cari.institute/"]],
