@@ -137,6 +137,8 @@ i L3080979285037059909253343351739 Untitled-13.jpg
 i X3080988656905386557391041860539 bagbagbagnola2-ezgif.com-video-to-gif-converter.gif
 i X2979195699557779373426642654139 img20240318_23070300.jpeg
 i V3080983928728179304527319405499 IMG_9267-ezgif.com-video-to-gif-converter.gif
+i V3080680441142237947981725569979 3e6ee240-66bf-40a0-a06e-4bc8495fe9cf.jpg
+i B2979195985795907165177755079611 IMG_0993.jpg
 LIST
 if [ "$fail" = "0" ]; then
   sed -i '' 's/const USE_LOCAL = false;/const USE_LOCAL = true;/' works.js 2>/dev/null || sed -i 's/const USE_LOCAL = false;/const USE_LOCAL = true;/' works.js

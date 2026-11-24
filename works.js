@@ -31,8 +31,7 @@ const WORKS = [
     media:["w/1500/q/75/i/W3069701243809778120541675066299/Generational-Cursive-August-13th-Flyer.jpg",
       "w/960/q/75/i/V3069702225545497723364012069819/Comp-2_13.jpg",
       "w/1512/q/75/i/I3083845781488432359799210775483/IMG_3993.jpeg",
-      "m/X3069702220011474501251146585019/Comp-2_13.mov",
-      "w/1500/q/75/i/E3069702392082703220813844059067/Comp4-ezgif.com-optimize-1.gif"] },
+      "w/800/q/75/i/E3069702392082703220813844059067/Comp4-ezgif.com-optimize-1.gif"] },
   { slug:"turtle-talk", title:"Turtle Talk", year:2026, ctx:"Supervisor: Kevin Devine",
     text:"A series of zines on turtles and tortoises for the Turtle Conservancy in Ojai, California.", made:"Photocopy zines", medium:"press",
     cover:"w/500/q/75/i/C3117259650376879318654145926075/ezgif.com-optimize-2.gif",
@@ -40,7 +39,7 @@ const WORKS = [
       "w/600/q/75/i/F3080519243660407282632513950651/Untitled-9.jpg",
       "w/600/q/75/i/U3080519642645034852896405853115/Untitled-11.jpg",
       "w/1920/q/75/i/E3117266493731549039349894878139/ezgif.com-optimize-3.gif",
-      "w/1500/q/75/i/L3117267595278871400915769627579/ezgif.com-gif-maker-3.gif"] },
+      "w/800/q/75/i/L3117267595278871400915769627579/ezgif.com-gif-maker-3.gif"] },
   { slug:"in-conversation-artifacts", title:"In Conversation: Artifacts", year:2026, ctx:"Not That Deep Gallery",
     text:"Organized and moderated a talk at Not That Deep Gallery, Brooklyn, and made the posters and brochures for it.", made:"Six-color print at Center for Book Arts", medium:"press",
     cover:"w/500/q/75/i/P3078913520499007441528569074619/3.png",
@@ -64,7 +63,7 @@ const WORKS = [
       "w/1500/q/75/i/F3080469628319869197515881321403/iiuuu.PNG"] },
   { slug:"generational-cursive", title:"Generational Cursive", year:2026, ctx:"Amma Cafe",
     text:"Flyers and promotional content for a conversation on the Global Village Coffeehouse aesthetic at Amma Cafe, Ridgewood.", made:"", medium:"screen",
-    cover:"w/800/q/75/i/Z3072982284625113288617685291963/AQMrCfkkZG23AJaTshVLm3xwsrfu-Y7WVow_HpAicUS-0WucliMVyygbrtgDoC095GR_srWI2JV99ly90b-dJJFT4hM8VcrAsIEXOdM-ezgif.com-video-to-gif-converter.gif", media:[] },
+    cover:"w/600/q/75/i/Z3072982284625113288617685291963/AQMrCfkkZG23AJaTshVLm3xwsrfu-Y7WVow_HpAicUS-0WucliMVyygbrtgDoC095GR_srWI2JV99ly90b-dJJFT4hM8VcrAsIEXOdM-ezgif.com-video-to-gif-converter.gif", media:[] },
   { slug:"take-off-your-shoes", title:"Take Off Your Shoes", year:2026, ctx:"Instructor: Peter Ahlberg",
     text:"The first issue of a publication series built on personal narrative.", made:"Four-color Riso, 120 pages, wire binding", medium:"press",
     cover:"w/500/q/75/i/W3077308066383369915478434517947/upload-54137-toys-ezgif.com-video-to-gif-converter-1.gif",
@@ -153,10 +152,10 @@ const UPDATES = [
   ["untitled #2","video art",2025,"m/L3073007491639721410877229765563/pes-et.mp4"],
   ["critoris #3","editorial",2025,"w/1500/q/75/i/X2979195699557779373426642654139/img20240318_23070300.jpeg","https://archive.org/details/critoris-week-3_202606"],
   ["critoris #1","editorial",2025,"w/1500/q/75/i/B2979286091407645649433412899771/IMG_9860.jpg","https://archive.org/details/critoris-week-1-copy"],
-  ["opposite posters","poster series",2025,"w/1000/q/75/i/V3080983928728179304527319405499/IMG_9267-ezgif.com-video-to-gif-converter.gif"],
+  ["opposite posters","poster series",2025,"w/500/q/75/i/V3080983928728179304527319405499/IMG_9267-ezgif.com-video-to-gif-converter.gif"],
   ["decore","3D printed keychain",2024,"w/1500/q/75/i/Q2979279401253185460895490118587/IMG_1335.jpg","","A collection of apparel made from script typefaces. Instructor: Peter Ahlberg."],
-  ["taycan #1","moving image",2024,"m/Y3080680431826632190758402003899/3e6ee240-66bf-40a0-a06e-4bc8495fe9cf.mov","https://www.instagram.com/put_out_istanbul/"],
-  ["lucky 7 matchboxes","packaging design",2024,"m/Z2979195981571602772298267759547/IMG_0993.MOV"]
+  ["taycan #1","moving image",2024,"w/1000/q/75/i/V3080680441142237947981725569979/3e6ee240-66bf-40a0-a06e-4bc8495fe9cf.jpg","https://www.instagram.com/put_out_istanbul/"],
+  ["lucky 7 matchboxes","packaging design",2024,"w/1000/q/75/i/B2979195985795907165177755079611/IMG_0993.jpg"]
 ];
 // each update entry is printed in its own pair of inks
 const UPDATE_PRINT = [["silver","orange"],["pink","purple"],["mint","orange"],["flgreen","black"],["cornflower","red"],["purple","lime"],
