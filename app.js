@@ -3,7 +3,7 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 // "w/1500/q/75/i/HASH/name.jpg" or "m/HASH/name.mp4" → Cargo URL, or img/HASH-name.jpg once downloaded
 const src = p => {
-  if (p.startsWith("img/")) return p;            // your own folder
+  if (p.startsWith("img/") || /^https?:/.test(p)) return p;   // your own folder, or a full address (sva.design)
   if (!USE_LOCAL) return IMG_BASE + p;
   const m = p.match(/([A-Z][0-9]{20,})\/([^/]+)$/);
   return m ? `img/${m[1]}-${m[2]}` : IMG_BASE + p;
