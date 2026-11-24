@@ -16,7 +16,13 @@ const fgOn = hex => {
 };
 const themeVars = w => `--a:${w.a};--b:${w.b};--t:${w.t};--t2:${fgOn(w.b)}`;
 const INKS = Object.values(INK).filter(c => c !== INK.black);
-const color2 = w => { const pool = INKS.filter(c => c !== w.a && c !== w.b); return pool[(WORKS.indexOf(w) * 5) % pool.length]; };
+// second ribbon colour: for projects whose colours were sampled from the work, a light tint of their own second ink;
+// otherwise a third ink from the set
+const tint = (hex, t) => "#" + [1, 3, 5].map(i => Math.round(parseInt(hex.substr(i, 2), 16) * (1 - t) + 255 * t).toString(16).padStart(2, "0")).join("");
+const color2 = w => {
+  if (!Object.values(INK).includes(w.b)) return tint(w.b, .55);
+  const pool = INKS.filter(c => c !== w.a && c !== w.b); return pool[(WORKS.indexOf(w) * 5) % pool.length];
+};
 
 // newest at top gets the highest number, like a back-list
 WORKS.forEach((w, i) => w.no = WORKS.length - i);

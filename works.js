@@ -72,11 +72,6 @@ const WORKS = [
       "https://sva.design/image/project/uploads/upload-54283-1582378__DefneAyaz_TimeCapsule2026_05.jpg",
       "https://sva.design/image/project/uploads/upload-54286-1582378__DefneAyaz_TimeCapsule2026_06.jpg",
       "https://sva.design/image/project/uploads/upload-54284-1582378__DefneAyaz_TimeCapsule2026_07.jpg"] },
-  { slug:"opposite-posters", title:"Opposite Posters", year:2026, ctx:"Instructor: Tom Geismar, Sagi Haviv, Mika Owens",
-    text:"Posters on opposites: ancient sculptural motifs merged with ASCII art, digital against analog, old against new. Classical imagery transformed by computational means sets historical permanence against the ephemeral nature of digital media.", made:"Poster series, print", medium:"press",
-    cover:"https://sva.design/image/project/uploads/upload-54291-oppposites1.jpg",
-    media:["https://sva.design/image/project/uploads/upload-54290-oppposites2.jpg",
-      "https://sva.design/image/project/uploads/upload-54289-oppposites3.jpg"] },
   { slug:"take-off-your-shoes", title:"Take Off Your Shoes", year:2026, ctx:"Instructor: Peter Ahlberg",
     text:"The first issue of a publication series built on personal narrative.", made:"Four-color Riso, 120 pages, wire binding", medium:"press",
     cover:"w/500/q/75/i/W3077308066383369915478434517947/upload-54137-toys-ezgif.com-video-to-gif-converter-1.gif",
@@ -130,6 +125,11 @@ const WORKS = [
       "w/1500/q/75/i/Q3091625598292030189564568933307/IMG_9323.png",
       "w/1500/q/75/i/I3091620365024523454459613680571/13.png",
       "w/1500/q/75/i/A3091627918707967221489066709947/4.png"] },
+  { slug:"opposite-posters", title:"Opposite Posters", year:2024, ctx:"Instructor: Tom Geismar, Sagi Haviv, Mika Owens",
+    text:"Posters on opposites: ancient sculptural motifs merged with ASCII art, digital against analog, old against new. Classical imagery transformed by computational means sets historical permanence against the ephemeral nature of digital media.", made:"Poster series, print", medium:"press",
+    cover:"https://sva.design/image/project/uploads/upload-54291-oppposites1.jpg",
+    media:["https://sva.design/image/project/uploads/upload-54290-oppposites2.jpg",
+      "https://sva.design/image/project/uploads/upload-54289-oppposites3.jpg"] },
   { slug:"grotesk", title:"Grotesk", year:2025, ctx:"Instructor: Robert Best",
     text:"A magazine about absurdity culture and elevated aesthetics.", made:"Magazine", medium:"press",
     cover:"w/500/q/75/i/E3077277594612662924291730183099/upload-51649-115.jpg",
@@ -298,23 +298,24 @@ const INK = {
   teal:"#00838a", silver:"#b9b9b5", gold:"#ac936e", warm:"#d9d3c7", black:"#1a1a1a"
 };
 const PRINT = {
-  "silicon-stanford":                 ["cornflower","orange","#000"],
+  "silicon-stanford":                 ["#b4c9fa","#f65530","#000"],
   "so-short":                         ["pink","purple","#000"],
-  "last-shot":                        ["florange","pink","#000"],
+  "last-shot":                        ["#f0d3e1","#a93577","#000"],
   "generational-cursive-panera-bred": ["yellow","pink","#000"],
   "turtle-talk":                      ["flgreen","black","#000"],
   "in-conversation-artifacts":        ["mint","orange","#000"],
-  "hooked":                           ["federal","aqua","#fff"],
+  "hooked":                           ["#08082f","#6e50eb","#fff"],
   "java-mixtape":                     ["sunflower","burgundy","#000"],
   "generational-cursive":             ["purple","lime","#fff"],
-  "time-capsule-posters":             ["teal","florange","#fff"],
-  "opposite-posters":                 ["burgundy","aqua","#fff"],
-  "take-off-your-shoes":              ["orange","blue","#000"],
-  "egon-schiele-semi-nude":           ["warm","red","#000"],
-  "ambient-1":                        ["silver","teal","#000"],
-  "twenty-love-poems":                ["red","pink","#000"],
+  "time-capsule-posters":             ["#c9a6e8","#f2a64a","#000"],
+  "opposite-posters":                 ["#e36aa6","#6fe39a","#000"],
+  "take-off-your-shoes":              ["#f39727","#1a1a1a","#000"],
+  "egon-schiele-semi-nude":           ["#e4cfc9","#2e2e2c","#000"],
+  "ambient-1":                        ["#0f0e0d","#d2b68f","#fff"],
+  "twenty-love-poems":                ["#f4b6a8","#0b0d0f","#000"],
   "caldera-candle":                   ["black","gold","#fff"],
   "grotesk":                          ["lime","pink","#000"],
-  "press-color":                      ["blue","yellow","#fff"]
+  "press-color":                      ["#131313","#edd204","#fff"]
 };
-WORKS.forEach(w => { const p = PRINT[w.slug] || ["silver","black","#000"]; w.a = INK[p[0]]; w.b = INK[p[1]]; w.t = p[2]; });
+// a value can be an ink name from the set above, or a colour sampled straight from the project
+WORKS.forEach(w => { const p = PRINT[w.slug] || ["silver","black","#000"]; w.a = INK[p[0]] || p[0]; w.b = INK[p[1]] || p[1]; w.t = p[2]; });
