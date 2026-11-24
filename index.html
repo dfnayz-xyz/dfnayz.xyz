@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>defne ayaz</title>
+<meta name="description" content="Defne Ayaz is a graphic designer whose practice focuses on visual identity, publishing and its relationship to contemporary culture.">
+<link rel="icon" href="https://freight.cargo.site/t/original/i/E3083880052163167146657265357755/favicon-100.ico">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="rot">
+    <a class="name" href="#works">Defne Ayaz</a>
+    <span aria-hidden="true">⮕</span>
+    <nav>
+      <a href="#updates" data-v="updates">Updates</a>
+      <a href="#works" data-v="works">Works</a>
+      <a href="#info" data-v="info">Info</a>
+    </nav>
+    <span class="scale" role="group" aria-label="Text scale"><button data-s="1">1</button><button data-s="2">2</button><button data-s="3">3</button><button data-s="4">4</button></span>
+    <span class="clock" id="clock">New York · Los Angeles</span>
+  </div>
+</header>
+
+<main>
+  <!-- WORKS: the index; each row opens its own panel -->
+  <section id="v-works" class="view">
+    <div class="hi" id="hi">
+      <p><span class="hi-name">Defne Ayaz</span> is a graphic designer working across visual identity, publishing and contemporary culture. New York and Los Angeles.</p>
+      <p class="hi-links">
+        <a href="https://drive.google.com/file/d/1frG532sbVZUb5qA6X_NC2aeVXbTq9loq/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+        <a href="https://www.linkedin.com/in/defne-ayaz-038974258/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.are.na/defne-ayaz/channels" target="_blank" rel="noopener">Are.na</a>
+        <a href="mailto:info@dfnayz.xyz">info@dfnayz.xyz</a>
+        <a href="#info">More info</a>
+      </p>
+      <div class="arrows hi-arrows" aria-hidden="true"></div>
+    </div>
+    <div class="bar" id="bar" aria-label="Colour index"></div>
+    <div class="ihead">
+      <button data-sort="no">No.</button>
+      <button data-sort="title">Title</button>
+      <span class="x">Context</span>
+      <button data-sort="year" class="y">Year</button>
+      <span></span>
+    </div>
+    <ol class="list" id="rows"></ol>
+    <p class="colo"><span>© Defne Ayaz, <span class="yr"></span>. New York &amp; Los Angeles</span><a href="#top" class="totop" aria-label="Back to top">∧</a></p>
+  </section>
+
+  <!-- ONE PROJECT: reached through {more} -->
+  <article id="v-project" class="view project" hidden></article>
+
+  <!-- UPDATES: a feed of entries, each printed in its own inks -->
+  <section id="v-updates" class="view updates" hidden></section>
+
+  <!-- INFO -->
+  <section id="v-info" class="view info" hidden>
+    <div class="box">
+      <div class="cols">
+        <div>
+          <p class="bio">Defne Ayaz is a graphic designer whose practice focuses mainly on the intersection of visual identity, publishing and its relationship to contemporary culture. She graduated from the School of Visual Arts in 2026 with a BFA in Design.</p>
+          <p class="sm">For inquiries or a PDF portfolio, please write.</p>
+          <p class="contact">
+            <a class="blk rnd" href="mailto:info@dfnayz.xyz">info@dfnayz.xyz</a>
+            <a class="blk rnd" href="tel:+19172576413">917.257.6413</a>
+            <span class="blk rnd">New York &amp; Los Angeles</span>
+          </p>
+          <p class="links"><a href="https://drive.google.com/file/d/1frG532sbVZUb5qA6X_NC2aeVXbTq9loq/view?usp=sharing" target="_blank" rel="noopener">CV</a> <a href="https://www.linkedin.com/in/defne-ayaz-038974258/" target="_blank" rel="noopener">LinkedIn</a> <a href="https://sva.design/search/?q=defne+ayaz" target="_blank" rel="noopener">sva.design</a> <a href="https://www.are.na/defne-ayaz/channels" target="_blank" rel="noopener">Are.na</a></p>
+        </div>
+        <div>
+          <h2>Awards &amp; recognition</h2>
+          <ol class="awards" id="awards"></ol>
+        </div>
+      </div>
+      <p class="colo"><span>© Defne Ayaz, <span class="yr"></span>. New York &amp; Los Angeles</span><a href="#top" class="totop" aria-label="Back to top">∧</a></p>
+    </div>
+  </section>
+</main>
+
+
+
+<div class="peek" id="peek" aria-hidden="true"></div>
+
+<script src="works.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
