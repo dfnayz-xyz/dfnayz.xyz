@@ -276,7 +276,8 @@ const SECTIONS = {
     ["Story: On Explorations of Global Language Justice", "set", ["s2-1.jpg","s2-2.jpg","s2-3.jpg","s2-4.jpg","s2-5.jpg"]],
     ["Story: Face/Interface 2026", "set", ["16.jpg","e-2.jpg","e-3.jpg","e-5.jpg"]],
     ["Speaker portraits", "small", ["12.jpg","13.jpg","14.jpg","15.jpg"]],
-    ["Stationery & partnerships", "grid", ["21.jpg","bc-2.jpg","22.jpg","k-1.jpg","k-2.jpg","k-3.jpg"]],
+    ["Stationery", "grid", ["21.jpg","bc-2.jpg"]],
+    ["Partnerships", "grid", ["22.jpg","k-1.jpg","k-2.jpg","k-3.jpg"]],
     ["On Instagram, @stanfordsilicon", "grid", ["ig-profile.jpg","ig-post-1.jpg","ig-post-2.jpg","ig-post-3.jpg"]],
     ["Full set", "wide", ["sheet.jpg"]]
   ]
