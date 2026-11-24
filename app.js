@@ -56,7 +56,10 @@ const ARROWS = [ // [width, height, path]
   [76, 64, "M6 56L36 26H20V12h40v40H46V36L16 66z"],  // diagonal arrow
   [104, 54, "M0 0h72l22 27-22 27H0l16-27z"]          // notched tag
 ];
+// phones get smaller, finer arrows
+const SMALL = matchMedia("(max-width: 600px)").matches;
 const arrowVars = (k, size) => {
+  size = Math.round(size * (SMALL ? .5 : 1));
   const [w, h, d] = ARROWS[k % ARROWS.length], gap = 12;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${w + gap}" height="${h}" viewBox="0 0 ${w + gap} ${h}"><path d="${d}"/></svg>`;
   const s = size / h;

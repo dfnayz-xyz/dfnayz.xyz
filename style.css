@@ -232,6 +232,19 @@ aside dd{margin:0}
   .peek{display:none}
   .bar a{height:12px}
 }
+@media (max-width:600px){
+  :root[data-scale="1"]{--fs:13px;--k:.75}
+  :root[data-scale="2"]{--fs:15px;--k:.85}
+  :root[data-scale="3"]{--fs:18px;--k:1}
+  .hi{padding-top:12px}
+  .hi-arrows{margin-top:8px}
+  .pp-top{min-height:min(52vh,420px)}
+  .u-cover{min-height:min(44vh,360px)}
+  .pp-line{gap:2px 16px}
+  .phead{margin:0 0 14px}
+  .entry .arrows{margin-bottom:16px}
+  .ribbon{padding:4px 0 3px!important}
+}
 @media (max-width:480px){.clock{display:none}.nav nav{gap:14px}}
 @media (prefers-reduced-motion:reduce){.peek{transition:none}}
 
