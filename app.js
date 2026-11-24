@@ -229,7 +229,7 @@ if (fine) {
     const u = null;
     if (r && r.getAttribute("aria-expanded") !== "true") {
       const w = WORKS.find(x => x.slug === r.dataset.slug);
-      peekOn(src(w.cover), w.b); movePeek(e);
+      peekOn(src(w.thumb), w.b); movePeek(e);
     } else if (u) { peekOn(src(u.dataset.img), u.style.getPropertyValue("--k")); movePeek(e); }
     else peekOff();
   });

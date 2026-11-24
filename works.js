@@ -234,6 +234,7 @@ const LOCAL_MEDIA = {
   "12.jpg",
   "13.jpg"
  ],
+ "generational-cursive": ["1.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","9.mp4","11.mp4","12.mp4","13.mp4"],
  "hooked": [
   "1.mp4",
   "2.mp4",
@@ -249,6 +250,8 @@ const LOCAL_MEDIA = {
   "12.mp4"
  ]
 };
+// Hover thumbnails in the index, where they should differ from the project page's first image
+const THUMBS = { "twenty-love-poems": "img/twenty-love-poems/6.mp4" };
 // Links, as on the Cargo site
 const LINKS = {
   "so-short": [["Meanwhile Getting Meaner","https://meanwhilegettingmeaner.com/"],["Noah Grossman","https://www.instagram.com/noahgrossmantrial/"]],
@@ -268,6 +271,7 @@ WORKS.forEach(w => {
   const l = LOCAL_MEDIA[w.slug];
   if (l) { w.cover = `img/${w.slug}/${l[0]}`; w.media = l.slice(1).map(f => `img/${w.slug}/${f}`); }
   w.links = LINKS[w.slug] || [];
+  w.thumb = THUMBS[w.slug] || w.cover;
 });
 
 // A shared ink set (riso drum colours). Every project is "printed" in two inks:
