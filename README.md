@@ -14,8 +14,7 @@ and videos from the Cargo site into:
 and then switches the site from Cargo to the local `img/` folder. Until you run it, images load from Cargo.
 
 ## Publish on GitHub Pages
-Live at https://dfnayz-xyz.github.io/dfnayz.xyz/ (the domain dfnayz.xyz stays on Cargo for now).
-To move the domain later: add a file named CNAME containing `dfnayz.xyz`, then follow steps 3–4 below.
+Live at https://dfnayz.xyz (GitHub Pages; the domain's DNS is managed in Cargo → Account → Domain Names → Edit DNS, where @ and www point to dfnayz-xyz.github.io. Email records there are for Google Workspace — leave them).
 
 1. Create a repo (e.g. `dfnayz`) and upload these files.
 2. Settings → Pages → Deploy from branch → `main` / root.
