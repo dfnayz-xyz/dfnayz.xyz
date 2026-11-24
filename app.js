@@ -135,7 +135,7 @@ const renderProject = w => {
       <div class="arrows" aria-hidden="true"></div>
       <div class="pp-line"><span>${esc(w.ctx || "Independent")}</span>${w.made ? `<span>${esc(w.made)}</span>` : ""}<span>${media.length} ${media.length === 1 ? "image" : "images"}</span></div>
     </header>
-    <div class="pp-grid">
+    <div class="pp-grid${w.sections.length ? " has-sec" : ""}">
       <aside>
         <p class="lede"><span class="on-w">${esc(w.text)}</span></p>
         <dl>
@@ -145,11 +145,11 @@ const renderProject = w => {
           ${w.links.length ? `<dt>Links</dt><dd>${linksHTML(w)}</dd>` : ""}
         </dl>
       </aside>
-      ${w.sections.length ? `<div class="pp-sections">${(() => { let n = 0; return w.sections.map(([title, items], si) => `
-        <section class="pp-sec">
-          <h2 class="pp-sec-h"><span class="on-b">${esc(title)}</span> <span class="m-ink">${String(si + 1).padStart(2, "0")} / ${items.length} ${items.length === 1 ? "piece" : "pieces"}</span></h2>
-          <div class="pp-media${items.length === 1 ? " one" : ""}">${items.map(m => { n++; return `<figure>${mediaTag(m, w)}<figcaption><span class="on-b">Fig. ${w.no}.${n}</span></figcaption></figure>`; }).join("")}</div>
-        </section>`).join(""); })()}</div>`
+      ${w.sections.length ? `<div class="pp-sections">${(() => { let n = 0; return w.sections.map(([title, kind, items], si) => {
+        const head = `<h2 class="pp-sec-h"><span class="on-b">${esc(title)}</span> <span class="m-ink">${String(si + 1).padStart(2, "0")}${kind === "set" ? ` · ${items.length} frames, in order` : items.length > 1 ? ` · ${items.length} pieces` : ""}</span></h2>`;
+        const figs = items.map((m, k) => { n++; return `<figure>${mediaTag(m, w)}<figcaption>${kind === "set" ? `<span class="on-b">${k + 1} / ${items.length}</span>` : `<span class="on-b">Fig. ${w.no}.${n}</span>`}</figcaption></figure>`; }).join("");
+        return `<section class="pp-sec k-${kind}">${head}<div class="pk-${kind}">${figs}</div></section>`;
+      }).join(""); })()}</div>`
       : `<div class="pp-media">${media.map((m, n) => `<figure class="${n % 3 === 0 ? "wide" : ""}">${mediaTag(m, w)}<figcaption><span class="on-b">Fig. ${w.no}.${n + 1}</span></figcaption></figure>`).join("")}</div>`}
     </div>
     <footer class="pp-foot">

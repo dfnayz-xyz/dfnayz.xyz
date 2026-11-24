@@ -248,7 +248,7 @@ const LOCAL_MEDIA = {
   "13.jpg"
  ],
  "generational-cursive": ["1.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","9.mp4","11.mp4","12.mp4","13.mp4"],
- "silicon-stanford": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","17.jpg","09.jpg","10.jpg","16.jpg","06.jpg","07.jpg","08.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","21.jpg","22.jpg"],
+ "silicon-stanford": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","17.jpg","09.jpg","10.jpg","p-logo.jpg","p-blank.jpg","07.jpg","c1-2.jpg","c1-3.jpg","c1-4.jpg","c1-5.jpg","06.jpg","c2-2.jpg","c2-3.jpg","c2-4.jpg","08.jpg","s1-2.jpg","s1-3.jpg","s1-4.jpg","s1-5.jpg","s2-1.jpg","s2-2.jpg","s2-3.jpg","s2-4.jpg","s2-5.jpg","16.jpg","e-2.jpg","e-3.jpg","e-4.jpg","e-5.jpg","12.jpg","13.jpg","14.jpg","15.jpg","21.jpg","bc-2.jpg","22.jpg","k-1.jpg","k-2.jpg","k-3.jpg","ig-profile.jpg","ig-post-1.jpg","ig-post-2.jpg","ig-post-3.jpg","sheet.jpg"],
  "hooked": [
   "1.mp4",
   "2.mp4",
@@ -265,13 +265,21 @@ const LOCAL_MEDIA = {
  ]
 };
 // Sections: group a project's page by application. Each entry is [title, [files from LOCAL_MEDIA]].
+// kind: "wide" one big piece · "grid" a loose grid · "set" a carousel or story sequence shown together as one numbered set
 const SECTIONS = {
   "silicon-stanford": [
-    ["Logotype", ["01.jpg"]],
-    ["Posters", ["02.jpg","03.jpg","04.jpg","05.jpg","17.jpg"]],
-    ["Social media", ["09.jpg","10.jpg","16.jpg","06.jpg","07.jpg","08.jpg","11.jpg"]],
-    ["Speaker portraits", ["12.jpg","13.jpg","14.jpg","15.jpg"]],
-    ["Stationery & partnerships", ["21.jpg","22.jpg"]]
+    ["Logotype", "wide", ["01.jpg"]],
+    ["Posters", "grid", ["02.jpg","03.jpg","04.jpg","05.jpg","17.jpg"]],
+    ["Social posts", "grid", ["09.jpg","10.jpg","p-logo.jpg","p-blank.jpg"]],
+    ["Carousel: On Explorations of Global Language Justice", "set", ["07.jpg","c1-2.jpg","c1-3.jpg","c1-4.jpg","c1-5.jpg"]],
+    ["Carousel: Interview with Manuel López Rocha", "set", ["06.jpg","c2-2.jpg","c2-3.jpg","c2-4.jpg"]],
+    ["Story: Interview with Manuel López Rocha", "set", ["08.jpg","s1-2.jpg","s1-3.jpg","s1-4.jpg","s1-5.jpg"]],
+    ["Story: On Explorations of Global Language Justice", "set", ["s2-1.jpg","s2-2.jpg","s2-3.jpg","s2-4.jpg","s2-5.jpg"]],
+    ["Story: Face/Interface 2026", "set", ["16.jpg","e-2.jpg","e-3.jpg","e-4.jpg","e-5.jpg"]],
+    ["Speaker portraits", "grid", ["12.jpg","13.jpg","14.jpg","15.jpg"]],
+    ["Stationery & partnerships", "grid", ["21.jpg","bc-2.jpg","22.jpg","k-1.jpg","k-2.jpg","k-3.jpg"]],
+    ["On Instagram, @stanfordsilicon", "grid", ["ig-profile.jpg","ig-post-1.jpg","ig-post-2.jpg","ig-post-3.jpg"]],
+    ["Full set", "wide", ["sheet.jpg"]]
   ]
 };
 // Hover thumbnails in the index, where they should differ from the project page's first image
@@ -299,7 +307,7 @@ WORKS.forEach(w => {
   if (l) { w.cover = `img/${w.slug}/${l[0]}`; w.media = l.slice(1).map(f => `img/${w.slug}/${f}`); }
   w.links = LINKS[w.slug] || [];
   w.thumb = THUMBS[w.slug] || w.cover;
-  w.sections = (SECTIONS[w.slug] || []).map(([t, files]) => [t, files.map(f => `img/${w.slug}/${f}`)]);
+  w.sections = (SECTIONS[w.slug] || []).map(([t, kind, files]) => [t, kind, files.map(f => `img/${w.slug}/${f}`)]);
 });
 
 // A shared ink set (riso drum colours). Every project is "printed" in two inks:
@@ -311,7 +319,7 @@ const INK = {
   teal:"#00838a", silver:"#b9b9b5", gold:"#ac936e", warm:"#d9d3c7", black:"#1a1a1a"
 };
 const PRINT = {
-  "silicon-stanford":                 ["#b4c9fa","#f65530","#000"],
+  "silicon-stanford":                 ["#141414","#f65530","#fff"],
   "so-short":                         ["pink","purple","#000"],
   "last-shot":                        ["#f0d3e1","#a93577","#000"],
   "generational-cursive-panera-bred": ["yellow","pink","#000"],
