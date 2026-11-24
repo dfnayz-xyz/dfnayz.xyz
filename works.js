@@ -61,8 +61,8 @@ const WORKS = [
       "w/847/q/75/i/L3080482373802539021951217570747/Kenpro-Java-Mixtape-Cover-3.jpg",
       "w/681/q/75/i/P3080482522391062535681655837627/Kenpro-Java-Mixtape-Cover-4.jpg",
       "w/1500/q/75/i/F3080469628319869197515881321403/iiuuu.PNG"] },
-  { slug:"generational-cursive", title:"Generational Cursive", year:2026, ctx:"Amma Cafe",
-    text:"Flyers and promotional content for a conversation on the Global Village Coffeehouse aesthetic at Amma Cafe, Ridgewood.", made:"", medium:"screen",
+  { slug:"generational-cursive", title:"Generational Cursive", year:2026, ctx:"Meanwhile Getting Meaner",
+    text:"Flyers, motion and promotional content for a conversation on the Global Village Coffeehouse aesthetic at Amma Cafe, Ridgewood.", made:"", medium:"screen",
     cover:"w/600/q/75/i/Z3072982284625113288617685291963/AQMrCfkkZG23AJaTshVLm3xwsrfu-Y7WVow_HpAicUS-0WucliMVyygbrtgDoC095GR_srWI2JV99ly90b-dJJFT4hM8VcrAsIEXOdM-ezgif.com-video-to-gif-converter.gif", media:[] },
   { slug:"time-capsule-posters", title:"Time Capsule Posters", year:2026, ctx:"Instructor: Elliott Walker",
     text:"A self-reflective archive of being a design student at this specific moment. Instead of a polished narrative it documents uncertainty, urgency and contradiction, built from conversations, personal notes, peer contributions and fragments of daily life: a collective snapshot rather than a single voice.", made:"Poster series, print", medium:"press",
@@ -246,7 +246,7 @@ const LOCAL_MEDIA = {
   "12.jpg",
   "13.jpg"
  ],
- "generational-cursive": ["1.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","9.mp4","11.mp4","12.mp4","13.mp4"],
+ "generational-cursive": ["0.mp4","1.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","9.mp4","11.mp4","12.mp4","13.mp4"],
  "silicon-stanford": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","17.jpg","09.jpg","10.jpg","p-logo.jpg","07.jpg","c1-2.jpg","c1-3.jpg","c1-4.jpg","c1-5.jpg","06.jpg","c2-2.jpg","c2-3.jpg","c2-4.jpg","08.jpg","s1-2.jpg","s1-3.jpg","s1-4.jpg","s2-1.jpg","s2-2.jpg","s2-3.jpg","s2-4.jpg","s2-5.jpg","16.jpg","e-2.jpg","e-3.jpg","e-5.jpg","12.jpg","13.jpg","14.jpg","15.jpg","21.jpg","bc-2.jpg","22.jpg","k-1.jpg","k-2.jpg","k-3.jpg","ig-profile.jpg","ig-post-1.jpg","ig-post-2.jpg","ig-post-3.jpg","sheet.jpg"],
  "hooked": [
   "1.mp4",
@@ -286,6 +286,7 @@ const SECTIONS = {
 const THUMBS = { "twenty-love-poems": "img/twenty-love-poems/6.mp4" };
 // Links, as on the Cargo site
 const LINKS = {
+  "generational-cursive": [["Meanwhile Getting Meaner","https://meanwhilegettingmeaner.com/"]],
   "silicon-stanford": [["silicon.stanford.edu","https://silicon.stanford.edu/"],["Instagram","https://www.instagram.com/stanfordsilicon"]],
   "so-short": [["Meanwhile Getting Meaner","https://meanwhilegettingmeaner.com/"],["Noah Grossman","https://www.instagram.com/noahgrossmantrial/"]],
   "last-shot": [["Meanwhile Getting Meaner","https://meanwhilegettingmeaner.com/"],["Riso Studio Arts","https://www.risostudioarts.com/"],["Event post 1","https://www.instagram.com/p/Dcy-qDogens/?img_index=1"],["Event post 2","https://www.instagram.com/p/Dc4Jn7rGzV7/?img_index=1"]],
