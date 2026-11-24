@@ -8,7 +8,7 @@ const USE_LOCAL = false;
 
 const WORKS = [
   { slug:"silicon-stanford", title:"SILICON Stanford", year:2026, ctx:"Stanford University",
-    text:"Visual identity for SILICON, the Stanford initiative on language inclusion and conservation in old and new media, carried across event posters, social media, interview features, speaker portraits, slide decks, business cards and partner lockups.", made:"Identity system: posters, social, slides, stationery", medium:"screen",
+    text:"Visual identity for SILICON, the Stanford initiative on language inclusion and conservation in old and new media, carried across event posters, social media, interview features, speaker portraits, business cards and partner lockups.", made:"Identity system: posters, social media, portraits, stationery", medium:"screen",
     cover:"w/1000/q/75/i/J3200289598724638754725219406779/Logotype.png", media:[] },
   { slug:"so-short", title:"So Short Film Festival", year:2026, ctx:"Meanwhile Getting Meaner",
     text:"Motion and static flyers for a one-night screening of animated shorts at Nightclub 101, New York. The program leaned on dominant femininity and humiliation humor, hosted by three comedians, with films by animators from both coasts. Promotional content made with Isabella Mendoza, Mia Culpa and Lal Diltemiz. Thanks to Noah Grossman.", made:"After Effects, InDesign; wheatpasted on East Broadway", medium:"screen",
@@ -248,7 +248,7 @@ const LOCAL_MEDIA = {
   "13.jpg"
  ],
  "generational-cursive": ["1.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","9.mp4","11.mp4","12.mp4","13.mp4"],
- "silicon-stanford": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","06.jpg","07.jpg","08.jpg","09.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","16.jpg","17.jpg","18.jpg","19.jpg","20.jpg","21.jpg","22.jpg"],
+ "silicon-stanford": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","17.jpg","09.jpg","10.jpg","16.jpg","06.jpg","07.jpg","08.jpg","11.jpg","12.jpg","13.jpg","14.jpg","15.jpg","21.jpg","22.jpg"],
  "hooked": [
   "1.mp4",
   "2.mp4",
@@ -263,6 +263,16 @@ const LOCAL_MEDIA = {
   "11.mp4",
   "12.mp4"
  ]
+};
+// Sections: group a project's page by application. Each entry is [title, [files from LOCAL_MEDIA]].
+const SECTIONS = {
+  "silicon-stanford": [
+    ["Logotype", ["01.jpg"]],
+    ["Posters", ["02.jpg","03.jpg","04.jpg","05.jpg","17.jpg"]],
+    ["Social media", ["09.jpg","10.jpg","16.jpg","06.jpg","07.jpg","08.jpg","11.jpg"]],
+    ["Speaker portraits", ["12.jpg","13.jpg","14.jpg","15.jpg"]],
+    ["Stationery & partnerships", ["21.jpg","22.jpg"]]
+  ]
 };
 // Hover thumbnails in the index, where they should differ from the project page's first image
 const THUMBS = { "twenty-love-poems": "img/twenty-love-poems/6.mp4" };
@@ -289,6 +299,7 @@ WORKS.forEach(w => {
   if (l) { w.cover = `img/${w.slug}/${l[0]}`; w.media = l.slice(1).map(f => `img/${w.slug}/${f}`); }
   w.links = LINKS[w.slug] || [];
   w.thumb = THUMBS[w.slug] || w.cover;
+  w.sections = (SECTIONS[w.slug] || []).map(([t, files]) => [t, files.map(f => `img/${w.slug}/${f}`)]);
 });
 
 // A shared ink set (riso drum colours). Every project is "printed" in two inks:

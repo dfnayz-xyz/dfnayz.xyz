@@ -155,6 +155,12 @@ aside dd{margin:0}
 .pp-media img,.pp-media video{display:block;width:100%;height:auto}
 .pp-media figure.wide img,.pp-media figure.wide video{max-height:88vh;object-fit:contain;object-position:left top}
 .pp-media figcaption{margin-top:6px}
+.pp-sections{display:flex;flex-direction:column;gap:clamp(36px,5vw,64px)}
+.pp-sec-h{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--b)}
+.pp-sec-h .m-ink{opacity:.65}
+.pp-media.one{grid-template-columns:minmax(0,1fr)}
+.pp-sec .pp-media{grid-template-columns:repeat(auto-fill,minmax(min(240px,100%),1fr));align-items:start}
+.pp-sec .pp-media.one{grid-template-columns:minmax(0,1fr)}
 .pp-foot{padding:0 var(--pad) 26px}
 .pp-nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;margin-top:14px}
 .pp-nav a{text-decoration:none}

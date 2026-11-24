@@ -145,7 +145,12 @@ const renderProject = w => {
           ${w.links.length ? `<dt>Links</dt><dd>${linksHTML(w)}</dd>` : ""}
         </dl>
       </aside>
-      <div class="pp-media">${media.map((m, n) => `<figure class="${n % 3 === 0 ? "wide" : ""}">${mediaTag(m, w)}<figcaption><span class="on-b">Fig. ${w.no}.${n + 1}</span></figcaption></figure>`).join("")}</div>
+      ${w.sections.length ? `<div class="pp-sections">${(() => { let n = 0; return w.sections.map(([title, items], si) => `
+        <section class="pp-sec">
+          <h2 class="pp-sec-h"><span class="on-b">${esc(title)}</span> <span class="m-ink">${String(si + 1).padStart(2, "0")} / ${items.length} ${items.length === 1 ? "piece" : "pieces"}</span></h2>
+          <div class="pp-media${items.length === 1 ? " one" : ""}">${items.map(m => { n++; return `<figure>${mediaTag(m, w)}<figcaption><span class="on-b">Fig. ${w.no}.${n}</span></figcaption></figure>`; }).join("")}</div>
+        </section>`).join(""); })()}</div>`
+      : `<div class="pp-media">${media.map((m, n) => `<figure class="${n % 3 === 0 ? "wide" : ""}">${mediaTag(m, w)}<figcaption><span class="on-b">Fig. ${w.no}.${n + 1}</span></figcaption></figure>`).join("")}</div>`}
     </div>
     <footer class="pp-foot">
       <div class="arrows back" aria-hidden="true"></div>
