@@ -133,8 +133,12 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .pp-row .sp{flex:1}
 .pp-row a{text-decoration:none}
 .pp-title{margin:0 0 18px}
+/* whole arrows only: "space" fits as many complete arrows as the width allows and spreads them evenly */
 .arrows{height:var(--ah,54px);background:var(--b);
-  -webkit-mask:var(--am) 0 50%/var(--aw,96px) var(--ah,54px) repeat-x;mask:var(--am) 0 50%/var(--aw,96px) var(--ah,54px) repeat-x}
+  -webkit-mask-image:var(--am);mask-image:var(--am);
+  -webkit-mask-size:var(--aw,96px) var(--ah,54px);mask-size:var(--aw,96px) var(--ah,54px);
+  -webkit-mask-repeat:space no-repeat;mask-repeat:space no-repeat;
+  -webkit-mask-position:0 50%;mask-position:0 50%}
 .arrows.back{transform:scaleX(-1)}
 .pp-line{display:flex;flex-wrap:wrap;gap:6px 24px;padding:8px 0;margin-top:10px;border-top:1px solid currentColor;border-bottom:1px solid currentColor}
 /* columns with rules and crosses (workflow book) */
