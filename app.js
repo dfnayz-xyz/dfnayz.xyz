@@ -28,7 +28,6 @@ const t = tz => new Date().toLocaleTimeString("en-US", { timeZone: tz, hour: "nu
 const tick = () => { clock.textContent = `New York ${t("America/New_York")}   Los Angeles ${t("America/Los_Angeles")}`; };
 tick(); setInterval(tick, 30000);
 const YEAR = new Date().getFullYear();
-const COLO = `<p class="colo"><span>© Defne Ayaz, ${YEAR}. New York &amp; Los Angeles</span><a href="#top" class="totop" aria-label="Back to top">∧</a></p>`;
 document.querySelectorAll(".yr").forEach(e => e.textContent = YEAR);
 
 /* ---------- panel ---------- */
@@ -46,7 +45,7 @@ const mediaTag = (m, w) => isVid(m)
   ? `<video src="${esc(src(m))}" autoplay muted loop playsinline></video>`
   : `<img src="${esc(src(m))}" alt="${esc(w.title)}" loading="lazy">`;
 
-/* ---------- graphic kit: every project and update gets its own arrows, stripes and ribbons ---------- */
+/* ---------- graphic kit: every project and update gets its own arrows and ribbons ---------- */
 const ARROWS = [ // [width, height, path]
   [96, 54, "M0 14h46V0l40 27-40 27V40H0z"],          // block arrow
   [72, 54, "M0 0h30l30 27-30 27H0l30-27z"],          // chevron
@@ -64,7 +63,6 @@ const arrowVars = (k, size) => {
   return `--am:url('data:image/svg+xml,${encodeURIComponent(svg)}');--aw:${((w + gap) * s).toFixed(1)}px;--ah:${size}px`;
 };
 const SIZES = [54, 40, 64, 48, 34, 58];
-const stripeClass = k => k % 7 ? `stripes s${k % 7}` : "stripes";
 // five ways to lay the ribbons across a cover
 const ribbonsHTML = (k, words, b, t2, second) => {
   const text = Array(16).fill(words.map(t => `<span>${esc(t)}</span>`).join("")).join("");
@@ -126,7 +124,6 @@ const renderProject = w => {
       <h1 class="pp-title"><span class="on-b">${esc(w.title)}</span></h1>
       <span class="cover-sp"></span>
       <div class="arrows" aria-hidden="true"></div>
-      <div class="${stripeClass(k * 3 + 1)}" aria-hidden="true"></div>
       <div class="pp-line"><span>${esc(w.ctx || "Independent")}</span>${w.made ? `<span>${esc(w.made)}</span>` : ""}<span>${media.length} ${media.length === 1 ? "image" : "images"}</span></div>
     </header>
     <div class="pp-grid">
@@ -148,7 +145,6 @@ const renderProject = w => {
         <a class="on-w" href="#works">Index</a>
         <a class="on-b" href="#${next.slug}">${esc(next.title)} →</a>
       </div>
-      ${COLO}
     </footer>`;
 };
 
@@ -249,7 +245,6 @@ if (fine) {
       <div class="pp-row"><span class="on-b">Updates</span><span class="sp"></span><span>${N} entries</span></div>
       <span class="cover-sp"></span>
       <div class="arrows" aria-hidden="true"></div>
-      <div class="stripes s2" aria-hidden="true"></div>
       <div class="pp-line"><span>Posters up, events, research, prints in progress</span><span>${Math.min(...years)}–${Math.max(...years)}</span></div>
     </header>`;
   const entries = UPDATES.map(([t, kind, y, m, link, text], i) => {
@@ -257,8 +252,7 @@ if (fine) {
     const no = pad2(N - i);
     const tstyle = ["", "rs-line", "rs-stripe"][i % 3];
     const tape = i % 3 === 1 || i % 5 === 3 ? `<i class="ribbon ${tstyle}" style="top:${68 + (i * 7) % 18}%;transform:rotate(${i % 2 ? -(4 + i % 6) : 3 + i % 7}deg);--b:${INK[pb]};background:${INK[pb]};color:${fgOn(INK[pb])}" aria-hidden="true">${Array(16).fill(`<span>${esc(t)}</span><span>No. ${no}</span><span>${y}</span>`).join("")}</i>` : "";
-    const lead = i % 4 === 2 ? `<div class="${stripeClass(i + 2)}" style="margin:0 calc(var(--pad) * -1) 22px" aria-hidden="true"></div>`
-      : `<div class="arrows${i % 2 ? " back" : ""}" aria-hidden="true"></div>${i % 4 === 0 ? `<div class="${stripeClass(i + 4)}" style="margin:-12px calc(var(--pad) * -1) 22px" aria-hidden="true"></div>` : ""}`;
+    const lead = `<div class="arrows${i % 2 ? " back" : ""}" aria-hidden="true"></div>`;
     const tag = isVid(m) ? `<video src="${esc(src(m))}" autoplay muted loop playsinline></video>` : `<img src="${esc(src(m))}" alt="${esc(t)}" loading="lazy">`;
     const media = m ? `<div class="e-media">${link ? `<a href="${esc(link)}" target="_blank" rel="noopener">${tag}</a>` : tag}</div>` : "<div></div>";
     return `<article class="entry${i % 2 ? " flip" : ""}" id="u-${no}" style="${vars(INK[pa], INK[pb])};${arrowVars(i + 5, SIZES[(i + 2) % SIZES.length])}">
@@ -277,13 +271,14 @@ if (fine) {
       </div>
     </article>`;
   }).join("");
-  $("#v-updates").innerHTML = cover + entries + COLO;
+  $("#v-updates").innerHTML = cover + entries;
 }
 $("#awards").innerHTML = AWARDS.map(([a, y], i) =>
   `<li style="--k:${INKS[(i * 5 + 2) % INKS.length]}"><span>${esc(a)}</span><span>${y}</span><span class="tab"></span></li>`).join("");
 
 /* scale 1–4, remembered per viewer */
 { let s = "2"; try { s = localStorage.getItem("dfn-scale") || "2"; } catch (e) {}
+  if (!["1", "2", "3"].includes(s)) s = "3";
   const set = v => { document.documentElement.dataset.scale = v;
     document.querySelectorAll(".scale button").forEach(b => b.setAttribute("aria-pressed", b.dataset.s === v));
     try { localStorage.setItem("dfn-scale", v); } catch (e) {} };
