@@ -192,7 +192,6 @@ const LOCAL_MEDIA = {
   "3.mp4",
   "4.mp4",
   "5.mp4",
-  "6.png",
   "7.jpg",
   "8.jpg"
  ],
