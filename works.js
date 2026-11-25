@@ -283,6 +283,8 @@ const SECTIONS = {
     ["Full set", "wide", ["sheet.jpg"]]
   ]
 };
+// Projects whose page shows every image at the same size
+const EVEN = ["time-capsule-posters"];
 // Hover thumbnails in the index, where they should differ from the project page's first image
 const THUMBS = { "twenty-love-poems": "img/twenty-love-poems/6.mp4" };
 // Links, as on the Cargo site
@@ -309,6 +311,7 @@ WORKS.forEach(w => {
   if (l) { w.cover = `img/${w.slug}/${l[0]}`; w.media = l.slice(1).map(f => `img/${w.slug}/${f}`); }
   w.links = LINKS[w.slug] || [];
   w.thumb = THUMBS[w.slug] || w.cover;
+  w.even = EVEN.includes(w.slug);
   w.sections = (SECTIONS[w.slug] || []).map(([t, kind, files]) => [t, kind, files.map(f => `img/${w.slug}/${f}`)]);
 });
 

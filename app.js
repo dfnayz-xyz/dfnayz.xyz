@@ -150,7 +150,7 @@ const renderProject = w => {
         const figs = items.map((m, k) => { n++; return `<figure>${mediaTag(m, w)}<figcaption>${kind === "set" ? `<span class="on-b">${k + 1} / ${items.length}</span>` : `<span class="on-b">Fig. ${w.no}.${n}</span>`}</figcaption></figure>`; }).join("");
         return `<section class="pp-sec k-${kind}">${head}<div class="pk-${kind}">${figs}</div></section>`;
       }).join(""); })()}</div>`
-      : `<div class="pp-media">${media.map((m, n) => `<figure class="${n % 3 === 0 ? "wide" : ""}">${mediaTag(m, w)}<figcaption><span class="on-b">Fig. ${w.no}.${n + 1}</span></figcaption></figure>`).join("")}</div>`}
+      : `<div class="pp-media${w.even ? " even" : ""}">${media.map((m, n) => `<figure class="${!w.even && n % 3 === 0 ? "wide" : ""}">${mediaTag(m, w)}<figcaption><span class="on-b">Fig. ${w.no}.${n + 1}</span></figcaption></figure>`).join("")}</div>`}
     </div>
     <footer class="pp-foot">
       <div class="arrows back" aria-hidden="true"></div>
