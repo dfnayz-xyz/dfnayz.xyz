@@ -246,7 +246,7 @@ const LOCAL_MEDIA = {
   "12.jpg",
   "13.jpg"
  ],
- "generational-cursive": ["13.mp4","1.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","9.mp4","11.mp4","12.mp4"],
+ "generational-cursive": ["13.mp4","2.mp4","4.mp4","5.mp4","6.mp4","7.mp4","8.mp4","11.mp4","12.mp4"],
  "silicon-stanford": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","17.jpg","09.jpg","10.jpg","p-logo.jpg","07.jpg","c1-2.jpg","c1-3.jpg","c1-4.jpg","c1-5.jpg","06.jpg","c2-2.jpg","c2-3.jpg","c2-4.jpg","08.jpg","s1-2.jpg","s1-3.jpg","s1-4.jpg","s2-1.jpg","s2-2.jpg","s2-3.jpg","s2-4.jpg","s2-5.jpg","16.jpg","e-2.jpg","e-3.jpg","e-5.jpg","12.jpg","13.jpg","14.jpg","15.jpg","21.jpg","bc-2.jpg","22.jpg","k-1.jpg","k-2.jpg","k-3.jpg","ig-profile.jpg","ig-post-1.jpg","ig-post-2.jpg","ig-post-3.jpg","sheet.jpg"],
  "time-capsule-posters": ["01.jpg","02.jpg","03.jpg","04.jpg","05.jpg","06.jpg","07.jpg","08.jpg","09.jpg","10.jpg","11.jpg","12.jpg","13.jpg","14.jpg"],
  "hooked": [
