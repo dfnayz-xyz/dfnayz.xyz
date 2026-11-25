@@ -284,7 +284,7 @@ const SECTIONS = {
   ]
 };
 // Projects whose page shows every image at the same size
-const EVEN = ["time-capsule-posters"];
+const EVEN = ["time-capsule-posters", "generational-cursive"];
 // Hover thumbnails in the index, where they should differ from the project page's first image
 const THUMBS = { "twenty-love-poems": "img/twenty-love-poems/6.mp4" };
 // Links, as on the Cargo site
