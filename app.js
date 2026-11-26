@@ -182,7 +182,7 @@ const render = () => {
         <span class="t"><span class="nm">${esc(w.title)}</span><span class="sub">${w.year}</span></span>
         <span class="x">${esc(w.ctx || "")}</span>
         <span class="y">${w.year}</span>
-        <span class="tab">${open ? "−" : "+"}</span>
+        <span class="tab" aria-hidden="true"></span>
       </button>${open ? panelHTML(w, l) : ""}
     </li>`;
   }).join("");
@@ -299,10 +299,11 @@ $("#awards").innerHTML = AWARDS.map(([a, y], i) =>
   set(s);
   document.querySelector(".scale").addEventListener("click", e => { const b = e.target.closest("button"); if (b) set(b.dataset.s); }); }
 
-/* homepage: one arrow per project, in that project's colour; the shape changes each visit */
-{ const [w, h, d] = ARROWS[Math.floor(Math.random() * ARROWS.length)];
+/* homepage arrows (top row and row tabs), in each project's colour; the shape changes each visit */
+{ const pick = [0, 1, 2, 5, 7];   // shapes that point one way (block, chevron, triangle, long, tag)
+  const [w, h, d] = ARROWS[pick[Math.floor(Math.random() * pick.length)]];
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"><path d="${d}"/></svg>`;
-  $("#bar").style.setProperty("--am", `url('data:image/svg+xml,${encodeURIComponent(svg)}')`); }
+  document.documentElement.style.setProperty("--arrow", `url('data:image/svg+xml,${encodeURIComponent(svg)}')`); }
 
 /* info blocks: a random ink on every visit */
 { const pool = INKS.slice().sort(() => Math.random() - .5);
