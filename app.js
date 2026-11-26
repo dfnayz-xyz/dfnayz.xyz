@@ -182,7 +182,7 @@ const render = () => {
         <span class="t"><span class="nm">${esc(w.title)}</span><span class="sub">${w.year}</span></span>
         <span class="x">${esc(w.ctx || "")}</span>
         <span class="y">${w.year}</span>
-        <span class="tab" aria-hidden="true"></span>
+        <span class="tab">${open ? "−" : "+"}</span>
       </button>${open ? panelHTML(w, l) : ""}
     </li>`;
   }).join("");

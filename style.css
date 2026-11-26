@@ -72,12 +72,11 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .row .t span.nm{box-decoration-break:clone;-webkit-box-decoration-break:clone;padding:1px .3em 0;margin-left:-.3em}
 .row:hover .nm,.row.hot .nm{background:var(--a);color:var(--t)}
 /* the tab: each project's inks down the right edge, like a magazine's section tabs */
-/* the tab: an arrow in the project's colour; it turns down when the preview is open */
-.row .tab{position:relative;padding:0}
-.row .tab::before{content:"";position:absolute;inset:5px 6px;background:var(--a);
-  -webkit-mask:var(--arrow) center/contain no-repeat;mask:var(--arrow) center/contain no-repeat;transition:transform .2s,background .15s}
-.row:hover .tab::before{transform:translateX(3px)}
-.row[aria-expanded=true] .tab::before{transform:rotate(90deg);background:var(--t)}
+.row .tab{display:grid;place-items:center;background:var(--a);color:var(--t);padding:0;border-left:1px solid rgba(0,0,0,.12);position:relative}
+.row .tab::after{content:"";position:absolute;left:0;right:0;bottom:0;height:5px;background:var(--b)}
+.row:hover .tab{background:var(--b);color:var(--a)}
+.row[aria-expanded=true]{background:var(--a);color:var(--t)}
+.row[aria-expanded=true] .tab{background:var(--b)}
 .row .sub{display:none}
 
 /* hover preview: offset in the second ink, like misregistration */
