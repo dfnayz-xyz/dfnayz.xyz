@@ -173,7 +173,7 @@ const render = () => {
   document.querySelectorAll("[data-sort]").forEach(b => {
     if (b.dataset.sort === state.sort) b.dataset.dir = state.dir; else delete b.dataset.dir;
   });
-  $("#bar").innerHTML = l.map(w => `<a href="#${w.slug}" style="${themeVars(w)}" class="${state.open === w.slug ? "on" : ""}" title="${pad2(w.no)} ${esc(w.title)}"></a>`).join("") + '<i class="reg" aria-hidden="true"></i>';
+  $("#bar").innerHTML = l.map(w => `<a href="#${w.slug}" style="--a:${w.a}" class="${state.open === w.slug ? "on" : ""}" title="${pad2(w.no)} ${esc(w.title)}" aria-label="${esc(w.title)}"></a>`).join("");
   rows.innerHTML = l.map(w => {
     const open = state.open === w.slug;
     return `<li style="${themeVars(w)}" id="w-${w.slug}"${open ? ' class="has-panel"' : ""}>
@@ -299,9 +299,10 @@ $("#awards").innerHTML = AWARDS.map(([a, y], i) =>
   set(s);
   document.querySelector(".scale").addEventListener("click", e => { const b = e.target.closest("button"); if (b) set(b.dataset.s); }); }
 
-/* homepage intro: arrow strip in a random ink each visit */
-{ const k = INKS[Math.floor(Math.random() * INKS.length)];
-  $("#hi").setAttribute("style", `--hk:${k};${arrowVars(Math.floor(Math.random() * ARROWS.length), 26)}`); }
+/* homepage: one arrow per project, in that project's colour; the shape changes each visit */
+{ const [w, h, d] = ARROWS[Math.floor(Math.random() * ARROWS.length)];
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}"><path d="${d}"/></svg>`;
+  $("#bar").style.setProperty("--am", `url('data:image/svg+xml,${encodeURIComponent(svg)}')`); }
 
 /* info blocks: a random ink on every visit */
 { const pool = INKS.slice().sort(() => Math.random() - .5);

@@ -49,16 +49,14 @@ button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:poin
 .hi-name{background:#000;color:#fff;padding:1px .3em 0}
 .hi-links{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:flex-end}
 .hi-links a{text-decoration:underline;text-underline-offset:3px}
-.hi-links a:hover{background:var(--hk);color:#000;text-decoration:none}
-.hi-arrows{grid-column:1 / -1;margin-top:10px;--b:var(--hk)}
+.hi-links a:hover{background:#000;color:#fff;text-decoration:none}
 
 /* ---------- colour control bar: one square per project ---------- */
-.bar{display:flex;gap:3px;padding:14px var(--pad) 10px;align-items:center}
-.bar a{flex:1;max-width:46px;height:16px;background:var(--a);position:relative}
-.bar a::after{content:"";position:absolute;right:0;bottom:0;width:40%;height:40%;background:var(--b)}
-.bar a:hover,.bar a.on{outline:1px solid #000;outline-offset:2px}
-.bar .reg{flex:none;width:16px;height:16px;margin-left:8px;background:
-  linear-gradient(#000,#000) center/1px 100% no-repeat,linear-gradient(#000,#000) center/100% 1px no-repeat;border-radius:50%;box-shadow:inset 0 0 0 1px #000}
+.bar{display:flex;gap:clamp(4px,.8vw,12px);padding:16px var(--pad) 12px;align-items:center}
+/* arrows only: each shrinks to fit, so the row never runs off the screen */
+.bar a{flex:1 1 0;min-width:0;max-width:64px;height:30px;background:var(--a);
+  -webkit-mask:var(--am) center/contain no-repeat;mask:var(--am) center/contain no-repeat;transition:transform .15s}
+.bar a:hover,.bar a.on{transform:translateY(-4px)}
 
 /* ---------- the index ---------- */
 .ihead,.row{display:grid;grid-template-columns:var(--cols);align-items:baseline;padding-left:var(--pad)}
@@ -256,14 +254,13 @@ aside dd{margin:0}
   .phead{margin-top:14px}
   :root{--shot:38vh}
   .peek{display:none}
-  .bar a{height:12px}
+  .bar a{height:18px}
 }
 @media (max-width:600px){
   :root[data-scale="1"]{--fs:13px;--k:.75}
   :root[data-scale="2"]{--fs:15px;--k:.85}
   :root[data-scale="3"]{--fs:18px;--k:1}
   .hi{padding-top:12px}
-  .hi-arrows{margin-top:8px}
   .pp-top{min-height:min(52vh,420px)}
   .u-cover{min-height:min(44vh,360px)}
   .pp-line{gap:2px 16px}
